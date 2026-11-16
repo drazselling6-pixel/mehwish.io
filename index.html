@@ -1,1103 +1,1101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
 
-    <title>Mehwish | Admin & Operations VA</title>
+    <title>Kiana Yeo | Home</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom M Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F7F1E8'/%3E%3Ctext x='50' y='76' font-family='Arial, sans-serif' font-weight='bold' font-size='75' fill='%23252525' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="images/site-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- SEO -->
-    <meta name="description" content="Mehwish — Admin and Operations Virtual Assistant portfolio showcasing projects and skills.">
+    <meta name="description" content="My website portfolio showcasing my projects and skills.">
 
-    <style>
-    /* =========================================================
-       RESET & BASE
-    ========================================================= */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-        font-family: "DM Sans", sans-serif;
-        line-height: 1.6;
-        background: #F7F1E8;
-        color: #252525;
-        overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    section[id] { scroll-margin-top: 80px; }
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-        outline: 2px solid var(--accent-dark); outline-offset: 3px;
-    }
-    .skip-link { position: absolute; top: -100px; left: 16px; z-index: 2000; padding: 10px 16px; background: var(--text); color: var(--white); border-radius: var(--radius-small); font-size: 0.85rem; font-weight: 600; }
-    .skip-link:focus { top: 12px; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    <!-- Open Graph / LinkedIn Preview -->
+    <meta property="og:title" content="Kiana Yeo | Portfolio">
+    <meta property="og:description"
+        content="A portfolio website to showcase my skills and experience in admin support and content management.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kiabytes.github.io/">
+    <meta property="og:image" content="https://kiabytes.github.io/images/portfolio-preview.jpg">
 
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-    :root {
-        --background: #F7F1E8;
-        --background-light: #EFE8DD;
-        --text: #252525;
-        --text-light: #66615B;
-        --accent: #A6B59F;
-        --accent-dark: #84947D;
-        --white: #FFFFFF;
-        --border: #DDD5C9;
-        --radius-small: 10px;
-        --radius-medium: 18px;
-        --max-width: 1200px;
-    }
-
-    /* =========================================================
-       VIEW SWITCHING (Simulates separate pages)
-    ========================================================= */
-    .view { display: none; }
-    .view.active { display: block; }
-
-    /* =========================================================
-       GENERAL
-    ========================================================= */
-    .container { width: min(90%, var(--max-width)); margin: 0 auto; }
-    .section { padding: 120px 0; }
-    .section-light { background: var(--background-light); }
-    .section-heading { max-width: 700px; margin-bottom: 60px; }
-    .section-heading h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 20px; }
-    .section-heading > p:last-child { color: var(--text-light); }
-    .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: var(--accent-dark); margin-bottom: 15px; }
-    .card-icon { font-size: 2rem; margin-bottom: 20px; }
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-    .navbar {
-        position: sticky; top: 0; z-index: 1000;
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        background: rgba(248, 247, 244, 0.95);
-    }
-    .nav-container { min-height: 75px; display: flex; align-items: center; justify-content: space-between; }
-    
-    /* STYLISH LOGO */
-    .logo {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 700;
-        font-size: 1.2rem;
-        letter-spacing: -0.01em;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .logo span {
-        background: linear-gradient(135deg, #252525 0%, #84947D 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .nav-links { display: flex; align-items: center; gap: 30px; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; cursor: pointer; }
-    .nav-links a:hover { color: var(--accent-dark); }
-    .nav-links .nav-cta { padding: 10px 20px; font-size: 0.85rem; color: var(--white); white-space: nowrap; transition: transform 0.2s ease, background 0.2s ease; }
-    .nav-links .nav-cta:hover { color: var(--white); }
-    .menu-button { display: none; border: none; background: none; cursor: pointer; color: var(--text); font-size: 1.5rem; line-height: 1; padding: 6px 10px; border-radius: var(--radius-small); }
-
-    /* Portfolio dropdown */
-    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; z-index: 1001; min-width: 220px; padding: 8px 0; flex-direction: column; background: #F7F1E8; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
-    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: flex; }
-    .dropdown-menu a { display: block; padding: 10px 16px; white-space: nowrap; font-size: 0.85rem; }
-    .dropdown-menu a:hover { background: rgba(166, 181, 159, 0.2); color: var(--accent-dark); }
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-    .button { display: inline-flex; align-items: center; justify-content: center; padding: 13px 24px; border: 1px solid transparent; border-radius: 999px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease; }
-    .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--text); color: var(--white); }
-    .button-primary:hover { background: var(--accent-dark); }
-    .button-secondary { background: transparent; border-color: var(--border); }
-    .button-secondary:hover { background: var(--white); }
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-    .hero { min-height: 85vh; display: flex; align-items: center; padding: 100px 0; }
-    .hero-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-    .hero-content { max-width: 700px; }
-    .hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); line-height: 0.95; margin-bottom: 20px; }
-    .hero h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 500; line-height: 1.2; margin-bottom: 25px; }
-    .hero-description { max-width: 620px; font-size: 1.1rem; color: var(--text-light); margin-bottom: 35px; }
-    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
-    .availability { font-size: 0.85rem; color: var(--text-light); }
-
-    /* Placeholder image styling for other sections */
-    .about-image img, .resume-paper img, .showcase-item img, .showcase-item video {
-        width: 100%;
-        min-height: 350px;
-        background-color: #EFE8DD;
-        border: 2px dashed #DDD5C9;
-        border-radius: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #84947D;
-        font-weight: 600;
-        text-align: center;
-        padding: 20px;
-        object-fit: cover;
-    }
-    
-    /* UPDATED: HERO AVATAR - PERFECT CIRCLE */
-    .hero-avatar img {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        border-radius: 50%; /* Forces it to be a circle */
-        aspect-ratio: 1 / 1; /* Forces a perfect square shape before rounding */
-        object-fit: cover; /* Prevents stretching */
-        border: 4px solid var(--white);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .showcase-item img, .showcase-item video { min-height: 250px; border-radius: 8px; border: 1px solid #eee7df; }
-
-    /* =========================================================
-       CAPABILITIES
-    ========================================================= */
-    .capabilities { padding: 100px 0; background: var(--text); color: var(--white); }
-    .capabilities .eyebrow { color: var(--accent); }
-    .capabilities .section-heading { max-width: 750px; }
-    .capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .capability-card { padding: 30px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-medium); transition: transform 0.2s ease, background 0.2s ease; }
-    .capability-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); }
-    .capability-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
-    .capability-card ul { list-style: none; color: #cfcfcf; font-size: 0.9rem; }
-    .capability-card li { margin-bottom: 7px; }
-
-    /* "ALSO AVAILABLE" NOTES */
-    .addon-note { display: flex; align-items: center; gap: 14px; max-width: 780px; margin: 40px auto 0; padding: 16px 24px; border: 1px dashed var(--accent-dark); border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.5; }
-    .addon-note-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .addon-note strong { font-weight: 700; }
-    .capabilities .addon-note { border-color: rgba(255, 255, 255, 0.3); color: #e6e6e6; }
-    .services .addon-note { background: var(--background); border-style: solid; border-color: var(--border); color: var(--text); }
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-    .about-container { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 80px; align-items: center; }
-    .about-content p { text-align: justify; }
-    .about-content h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 25px; }
-    .about-content > p { color: var(--text-light); margin-bottom: 15px; }
-    .strengths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; }
-    .strength strong { display: block; margin-bottom: 5px; }
-    .strength p { font-size: 0.9rem; color: var(--text-light); }
-
-    /* =========================================================
-       SERVICES
-    ========================================================= */
-    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-    .service-card { padding: 35px; background: var(--background); border: 1px solid var(--border); border-radius: var(--radius-medium); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06); }
-    .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-    .service-card > p { color: var(--text-light); margin-bottom: 20px; }
-    .service-card ul { list-style: none; }
-    .service-card li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.9rem; }
-    .service-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-dark); font-weight: 700; }
-
-    /* =========================================================
-       PORTFOLIO PREVIEW (homepage)
-    ========================================================= */
-    .portfolio-preview { text-align: center; }
-    .portfolio-preview h2 { font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.1; }
-    .portfolio-preview .section-heading { max-width: 700px; margin: 0 auto; }
-    .portfolio-preview .section-heading > p:not(.eyebrow) { max-width: 620px; margin-left: auto; margin-right: auto; }
-    .portfolio-preview .button { margin-top: 25px; }
-
-    /* =========================================================
-       WORKFLOW
-    ========================================================= */
-    .workflow-grid { display: flex; align-items: flex-start; gap: 15px; }
-    .workflow-step { flex: 1; min-width: 0; text-align: center; }
-    .workflow-step span { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; margin-bottom: 15px; border-radius: 50%; background: var(--text); color: var(--white); font-size: 0.8rem; font-weight: 700; }
-    .workflow-step h3 { margin-bottom: 8px; }
-    .workflow-step p { font-size: 0.85rem; color: var(--text-light); }
-    .workflow-line { flex: 0 0 20px; height: 1px; margin-top: 22px; background: var(--border); }
-
-    /* =========================================================
-       TOOLS
-    ========================================================= */
-    .tool-category { margin-bottom: 55px; }
-    .tool-category:last-of-type { margin-bottom: 40px; }
-    .tool-category-title { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; font-size: 1.1rem; font-weight: 700; }
-    .tool-category-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-    .tools-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
-    .tool-card { flex: 0 1 calc((100% - 48px) / 4); min-width: 0; display: flex; flex-direction: column; padding: 24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-medium); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .tool-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06); }
-    .tool-icon { font-size: 1.8rem; margin-bottom: 12px; }
-    .tool-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-    .tool-card p { color: var(--text-light); font-size: 0.85rem; }
-    .tools-note { display: inline-block; padding: 12px 22px; background: var(--background-light); border: 1px solid var(--border); border-radius: 999px; font-size: 0.9rem; }
-
-    /* =========================================================
-       RESUME
-    ========================================================= */
-    .resume-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .resume-content h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 20px; }
-    .resume-content > p:not(.eyebrow) { color: var(--text-light); margin-bottom: 30px; }
-    .resume-paper { min-height: 500px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--white); border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); }
-
-    /* =========================================================
-       CONTACT & FORM
-    ========================================================= */
-    .contact-container { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; }
-    .contact-content h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 20px; }
-    .contact-content > p:not(.eyebrow) { color: var(--text-light); margin-bottom: 35px; }
-    .contact-details { display: flex; flex-direction: column; gap: 20px; }
-    .contact-details span { display: block; margin-bottom: 3px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); }
-    .contact-details a { font-weight: 600; }
-    .contact-details a:hover { color: var(--accent-dark); }
-    .contact-details p { margin: 0; }
-    .contact-form { display: flex; flex-direction: column; gap: 20px; }
-    .contact-form .button { align-self: flex-start; }
-    .form-group { display: flex; flex-direction: column; gap: 7px; }
-    .form-group label { font-size: 0.85rem; font-weight: 600; }
-    .form-group input, .form-group textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-small); background: var(--white); color: var(--text); outline: none; resize: vertical; transition: border 0.2s ease; }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-dark); }
-
-    /* Custom dropdown */
-    .custom-select { position: relative; }
-    .select-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-small); background: var(--white); color: var(--text-light); text-align: left; cursor: pointer; transition: border 0.2s ease; }
-    .select-trigger::after { content: ""; flex-shrink: 0; width: 12px; height: 8px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2384947D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center; transition: transform 0.2s ease; }
-    .custom-select.open .select-trigger::after { transform: rotate(180deg); }
-    .select-trigger:focus-visible, .custom-select.open .select-trigger { border-color: var(--accent-dark); outline: none; }
-    .custom-select.has-value .select-trigger { color: var(--text); }
-    .custom-select.invalid .select-trigger { border-color: #B5483D; }
-    .select-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 1001; padding: 6px 0; background: #F7F1E8; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
-    .custom-select.open .select-menu { display: block; }
-    .select-menu li { padding: 10px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; }
-    .select-menu li:hover, .select-menu li.active { background: rgba(166, 181, 159, 0.2); color: var(--accent-dark); }
-    .select-menu li[aria-selected="true"] { font-weight: 700; }
-    .field-error { font-size: 0.8rem; color: #B5483D; }
-
-    /* =========================================================
-       PORTFOLIO PAGE STYLES
-    ========================================================= */
-    .portfolio { padding-top: 100px; padding-bottom: 80px; }
-    .portfolio-sub-section { margin: 64px 0 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
-    .portfolio-sub-section h2 { font-size: clamp(1.3rem, 2.4vw, 1.65rem); color: var(--text); margin: 0; }
-    .project { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; padding: 48px 0; border-bottom: 1px solid #eee7df; }
-    .project-reverse { grid-template-columns: 1.2fr 1fr; }
-    .project-reverse .project-info { order: 2; }
-    .project-reverse .project-visual { order: 1; }
-    .project-number { display: inline-block; font-size: .9rem; font-weight: 700; color: var(--accent-dark); background: rgba(166, 181, 159, 0.2); padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
-    .project-category { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); margin: 0 0 8px; }
-    .project-info h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); margin-bottom: 16px; }
-    .project-info > p { color: var(--text-light); margin-bottom: 20px; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .project-tags span { font-size: .78rem; font-weight: 500; color: var(--text); background: var(--white); padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); }
-    .project-visual { display: flex; flex-direction: column; gap: 20px; }
-    .image-showcase { gap: 20px; }
-    .showcase-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
-    .showcase-label { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 10px; }
-    .showcase-caption { font-size: .88rem; color: var(--text-light); margin: 12px 0 0; }
-    .showcase-divider { text-align: center; position: relative; }
-    .showcase-divider::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--border); z-index: 0; }
-    .showcase-divider span { position: relative; z-index: 1; background: var(--background); padding: 4px 14px; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--text-light); }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-    .footer { padding: 50px 0; background: var(--text); color: var(--white); }
-    .footer-container { display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; }
-    .footer p { color: #aaa; font-size: 0.8rem; }
-    .footer .logo { display: block; margin-bottom: 5px; color: var(--white); }
-    .footer .logo span { background: linear-gradient(135deg, #ffffff 0%, #A6B59F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 0.8rem; color: #ccc; cursor: pointer; }
-    .footer-links a:hover { color: var(--white); }
-    .copyright { text-align: right; }
-
-    /* =========================================================
-       RESPONSIVE — TABLET (900px)
-    ========================================================= */
-    @media (max-width: 900px) {
-        .nav-links { gap: 12px; }
-        .nav-links a { font-size: 0.82rem; }
-        .nav-links .nav-cta { padding: 9px 16px; font-size: 0.8rem; }
-        .hero-container, .about-container, .resume-container, .contact-container, .footer-container, .service-grid { grid-template-columns: 1fr; }
-        .capability-grid { grid-template-columns: repeat(2, 1fr); }
-        .tool-card { flex-basis: calc((100% - 32px) / 2); }
-        .footer-container { text-align: center; }
-        .footer-links { justify-content: center; }
-        .copyright { text-align: center; }
-        .project, .project-reverse { grid-template-columns: 1fr; gap: 28px; }
-        .project-reverse .project-info, .project-reverse .project-visual { order: 0; }
-        
-        /* Center avatar on tablet/mobile */
-        .hero-avatar { margin: 0 auto; max-width: 400px; width: 100%; }
-    }
-
-    /* =========================================================
-       RESPONSIVE — MOBILE (650px)
-    ========================================================= */
-    @media (max-width: 650px) {
-        .section { padding: 80px 0; }
-        .menu-button { display: block; }
-        .nav-links { display: none; position: absolute; top: calc(100% + 6px); right: 5%; z-index: 1001; width: min(280px, 90vw); padding: 8px 0; flex-direction: column; align-items: stretch; gap: 0; background: #F7F1E8; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
-        .nav-links.open { display: flex; }
-        .nav-links a { display: block; width: 100%; padding: 10px 16px; font-size: 0.9rem; }
-        .nav-links a:hover { background: rgba(166, 181, 159, 0.2); color: var(--accent-dark); }
-        .nav-dropdown { width: 100%; flex-direction: column; align-items: stretch; }
-        .dropdown-menu { display: flex; position: static; min-width: 0; padding: 0 0 4px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-        .dropdown-menu a { padding: 8px 16px 8px 32px; font-size: 0.82rem; white-space: normal; color: var(--text-light); }
-        .nav-links .nav-cta { display: flex; width: calc(100% - 32px); margin: 8px 16px; padding: 12px 24px; font-size: 0.9rem; color: var(--white); }
-        .nav-links .nav-cta:hover { background: var(--accent-dark); color: var(--white); }
-        .hero { padding: 80px 0; }
-        .hero h1 { font-size: 3.2rem; }
-        .hero-buttons { flex-direction: column; align-items: stretch; }
-        .button { width: 100%; }
-        .portfolio-preview .button { width: auto; }
-        .capability-grid, .strengths { grid-template-columns: 1fr; }
-        .tool-card { flex-basis: 100%; }
-        .tool-category { margin-bottom: 40px; }
-        .service-card { padding: 25px; }
-        .addon-note { flex-direction: column; gap: 6px; text-align: center; }
-        .workflow-grid { flex-direction: column; gap: 30px; }
-        .workflow-line { display: none; }
-    }
-    </style>
 </head>
 
 <body>
 
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
     <!-- =====================================================
          NAVIGATION
     ====================================================== -->
+
     <header class="navbar">
+
         <div class="container nav-container">
+
             <a href="#home" class="logo">
-                <span>Mehwish</span>
+                Kiana Yeo
             </a>
 
             <nav class="nav-links" id="main-nav" aria-label="Main navigation">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
                 <div class="nav-dropdown">
-                    <a href="#portfolio" class="dropdown-toggle">Portfolio</a>
+                    <a href="portfolio.html" class="dropdown-toggle">
+                        Portfolio
+                    </a>
+
                     <div class="dropdown-menu">
-                        <a href="#section-1">Creator &amp; Online Business Support</a>
-                        <a href="#section-2">Admin &amp; Operations Systems</a>
-                        <a href="#section-3">Data, Reporting &amp; Research</a>
+                        <a href="portfolio.html#section-1">Creator &amp; Online Business Support</a>
+                        <a href="portfolio.html#section-2">Admin &amp; Operations Systems</a>
+                        <a href="portfolio.html#section-3">Data, Reporting &amp; Research</a>
                     </div>
                 </div>
-                <a href="#tools">Tools</a>
-                <a href="#resume">Resume</a>
-                <a href="#contact">Contact</a>
-                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer" class="button button-primary nav-cta">Book a Call</a>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://calendly.com/kianayeo15/15min-intro-call" target="_blank" rel="noopener noreferrer"
+                    class="button button-primary nav-cta">Book a Call</a>
             </nav>
 
-            <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+            <!-- Mobile menu button -->
+            <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="main-nav">☰</button>
+
         </div>
+
     </header>
 
-    <main id="main-content">
+
+    <main>
+
+    <!-- =====================================================
+        HERO / HOME
+    ====================================================== -->
+
+        <section id="home" class="hero">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        ADMIN & OPERATIONS VIRTUAL ASSISTANT
+                    </p>
+
+                    <h1>
+                        Hi, I'm Kiana!
+                    </h1>
+
+                    <h2>
+                        Admin & Operations Support for Digital Creators and Small Online Businesses
+                    </h2>
+
+                    <p class="hero-description">
+                        I organize your inbox, client records, content, and build the behind-the-scenes setup that
+                        makes your business look professional and run smoothly, so you can spend more of your time doing what only you can do.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="portfolio.html" class="button button-primary">
+                            View My Work
+                        </a>
+
+                        <a href="https://calendly.com/kianayeo15/15min-intro-call" target="_blank"
+                            rel="noopener noreferrer" class="button button-secondary">Book a Free 15-Min Call</a>
+
+                    </div>
+
+                    <p class="availability">
+                        Philippines (UTC+8) · Flexible hours · Open to full/part-time and freelance roles
+                    </p>
+
+                </div>
+
+
+                <!-- Hero Avatar -->
+
+                <div class="hero-avatar">
+
+                    <img src="images/profile-picture-1.png" alt="Kiana's profile picture">
+
+                </div>
+
+            </div>
+
+        </section>
+
 
         <!-- =====================================================
-             HOME VIEW
+             WHAT I CAN HELP WITH
         ====================================================== -->
-        <div id="view-home" class="view active">
 
-            <!-- HERO -->
-            <section id="home" class="hero">
-                <div class="container hero-container">
-                    <div class="hero-content">
-                        <p class="eyebrow">ADMIN & OPERATIONS VIRTUAL ASSISTANT</p>
-                        <h1>Hi, I'm Mehwish!</h1>
-                        <h2>Admin & Operations Support for Digital Creators and Small Online Businesses</h2>
-                        <p class="hero-description">
-                            I organize your inbox, client records, content, and build the behind-the-scenes setup that
-                            makes your business look professional and run smoothly, so you can spend more of your time
-                            doing what only you can do.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#portfolio" class="button button-primary">View My Work</a>
-                            <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer" class="button button-secondary">Book a Free 15-Min Call</a>
-                        </div>
-                        <p class="availability">
-                            Lahore, Pakistan (UTC+5) · Flexible hours · Open to full/part-time and freelance roles
-                        </p>
-                    </div>
+        <section class="capabilities">
 
-                    <!-- HERO AVATAR / IMAGE PLACEMENT -->
-                    <div class="hero-avatar">
-                        <!-- Make sure this image is inside an 'images' folder -->
-                        <img src="images/profile (2).jpg" alt="Mehwish Profile Picture">
-                    </div>
-                </div>
-            </section>
+            <div class="container">
 
-            <!-- CAPABILITIES -->
-            <section class="capabilities">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">WHAT I CAN HELP WITH</p>
-                        <h2>Keeping your business and work organized, one task at a time.</h2>
-                    </div>
+                <div class="section-heading">
 
-                    <div class="capability-grid">
-                        <article class="capability-card">
-                            <div class="card-icon">📩</div>
-                            <h3>Inbox &amp; Admin Management</h3>
-                            <ul>
-                                <li>Organized inbox and calendar</li>
-                                <li>Easy-to-find files</li>
-                                <li>Invoice and receipt tracking</li>
-                            </ul>
-                        </article>
-                        <article class="capability-card">
-                            <div class="card-icon">📁</div>
-                            <h3>CRM &amp; Client Onboarding</h3>
-                            <ul>
-                                <li>Accurate contact records</li>
-                                <li>Follow-ups that never slip</li>
-                                <li>Smooth client onboarding setup</li>
-                            </ul>
-                        </article>
-                        <article class="capability-card">
-                            <div class="card-icon">📊</div>
-                            <h3>Data, Research &amp; Systems</h3>
-                            <ul>
-                                <li>Clean data and clear reports</li>
-                                <li>Competitor and lead research</li>
-                                <li>Custom trackers and systems</li>
-                            </ul>
-                        </article>
-                        <article class="capability-card">
-                            <div class="card-icon">📅</div>
-                            <h3>Content &amp; Brand Support</h3>
-                            <ul>
-                                <li>Brand and media kit design</li>
-                                <li>Graphics and post scheduling</li>
-                                <li>Video editing</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <p class="addon-note">
-                        <span class="addon-note-icon">🌐</span>
-                        <span><strong>Additional web support:</strong> develop and keep your site fresh, mobile-friendly, and ready to bring in customers and leads.</span>
+                    <p class="eyebrow">
+                        WHAT I CAN HELP WITH
                     </p>
+
+                    <h2>
+                        Keeping your business and work organized,
+                        one task at a time.
+                    </h2>
+
                 </div>
-            </section>
 
-            <!-- ABOUT -->
-            <section id="about" class="about section">
-                <div class="container about-container">
-                    <div class="about-image">
-                        <img src="images/stockimage1.png" alt="Mehwish working">
-                    </div>
 
-                    <div class="about-content">
-                        <p class="eyebrow">ABOUT ME</p>
-                        <h2>Organized, detail-oriented, and always ready to learn.</h2>
-                        
-                        <p>
-                            I’m a virtual assistant and Computer Science student based in Lahore, Pakistan. On the side, I also run my own small digital product shop, Choyeo Digitals, where I manage everything from product listings and customer inquiries to content scheduling and product creation. I’ve also gained experience in data entry and records verification at a local government office, along with writing and editing for my college publication as an Associate Editor.
-                        </p>
-                        <p>
-                            I'm most comfortable with the tools creators and small online businesses actually use: Google Workspace, Notion, Asana, Canva, Excel, and Zoho CRM. I learn new tools quickly, communicate clearly in writing, and send regular updates if needed so you always know where things stand.
-                        </p>
+                <div class="capability-grid">
 
-                        <div class="strengths">
-                            <div class="strength">
-                                <strong>✓ Attention to Detail</strong>
-                                <p>Verified and processed 50+ resident ID cards and records against source documents.</p>
-                            </div>
-                            <div class="strength">
-                                <strong>✓ Organization</strong>
-                                <p>Built Notion systems for content, listings, and scheduling across 5 digital products.</p>
-                            </div>
-                            <div class="strength">
-                                <strong>✓ Adaptability</strong>
-                                <p>Learned Zoho CRM and Asana through hands-on practice and applied them in real projects.</p>
-                            </div>
-                            <div class="strength">
-                                <strong>✓ Reliability</strong>
-                                <p>Met publication deadlines at The Datalink and published 3 feature articles, and coordinated 4 teams for a school event.</p>
-                            </div>
+                    <!-- Card 1 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📩
                         </div>
-                    </div>
+
+                        <h3>Inbox &amp; Admin Management</h3>
+
+                        <ul>
+                            <li>Organized inbox and calendar</li>
+                            <li>Easy-to-find files</li>
+                            <li>Invoice and receipt tracking</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Card 2 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📁
+                        </div>
+
+                        <h3>CRM &amp; Client Onboarding</h3>
+
+                        <ul>
+                            <li>Accurate contact records</li>
+                            <li>Follow-ups that never slip</li>
+                            <li>Smooth client onboarding setup</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Card 3 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📊
+                        </div>
+
+                        <h3>Data, Research &amp; Systems</h3>
+
+                        <ul>
+                            <li>Clean data and clear reports</li>
+                            <li>Competitor and lead research</li>
+                            <li>Custom trackers and systems</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Card 4 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <h3>Content &amp; Brand Support</h3>
+
+                        <ul>
+                            <li>Brand and media kit design</li>
+                            <li>Graphics and post scheduling</li>
+                            <li>Video editing</li>
+                        </ul>
+                    </article>
+
                 </div>
-            </section>
 
-            <!-- SERVICES -->
-            <section id="services" class="services section section-light">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">SERVICES</p>
-                        <h2>How I can support you</h2>
-                        <p>Reliable admin, operations, and creator support that keeps your everyday work organized and seamless.</p>
-                    </div>
+                <p class="addon-note">
+                    <span class="addon-note-icon">🌐</span>
+                    <span><strong>Additional web support:</strong> develop and keep your site fresh, mobile-friendly, and ready to bring in customers and leads.</span>
+                </p>
 
-                    <div class="service-grid">
-                        <article class="service-card">
-                            <div class="card-icon">📩</div>
-                            <h3>Inbox, Calendar & File Management</h3>
-                            <p>A clutter-free inbox, a schedule that runs smoothly, and files you can find in seconds.</p>
-                            <ul>
-                                <li>Organized inbox with labels, filters, and brand outreach handling</li>
-                                <li>Conflict-free calendar scheduling</li>
-                                <li>Clear folder structures and naming conventions</li>
-                                <li>Polished documents and proposals</li>
-                                <li>Invoice preparation and receipt tracking</li>
-                            </ul>
-                        </article>
+            </div>
 
-                        <article class="service-card">
-                            <div class="card-icon">📁</div>
-                            <h3>CRM & Customer Records</h3>
-                            <p>No lead slips through, and every new client gets a smooth, professional start.</p>
-                            <ul>
-                                <li>Up-to-date contact and lead records</li>
-                                <li>Follow-up tracking and task reminders</li>
-                                <li>Customer inquiries handled and answered</li>
-                                <li>Verified, duplicate-free records</li>
-                                <li><b>Backend client onboarding:</b> intake forms, welcome emails, and onboarding checklists</li>
-                            </ul>
-                        </article>
+        </section>
 
-                        <article class="service-card">
-                            <div class="card-icon">🔎</div>
-                            <h3>Spreadsheets, Data, Research & Systems</h3>
-                            <p>Messy information becomes clean data, clear trackers, and systems that save you hours.</p>
-                            <ul>
-                                <li>Clean, standardized data with duplicates removed</li>
-                                <li>Tracking sheets and monthly summaries you can act on</li>
-                                <li>Competitor and lead list research</li>
-                                <li>Ongoing updates and maintenance of existing systems</li>
-                                <li><b>Custom systems:</b> trackers, dashboards, and automated workflows built to fit your business</li>
-                            </ul>
-                        </article>
-
-                        <article class="service-card">
-                            <div class="card-icon">📅</div>
-                            <h3>Content, Brand Kits & Creator Support</h3>
-                            <p>A consistent brand, and a content calendar that posts itself.</p>
-                            <ul>
-                                <li><b>Brand kit and media kit design</b> that makes you look professional and brand-deal ready</li>
-                                <li>Notion content calendars</li>
-                                <li>Canva graphics and templates</li>
-                                <li>Post scheduling, ready to publish</li>
-                                <li>Video editing and promotional reels</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <p class="addon-note">
-                        <span class="addon-note-icon">🌐</span>
-                        <span><strong>Website development &amp; maintenance:</strong> a website that stays fresh, works on every device, and gets you leads. This covers content updates, simple landing pages, responsive design, and link and mobile testing.</span>
-                    </p>
-                </div>
-            </section>
-
-            <!-- PORTFOLIO PREVIEW -->
-            <section class="portfolio-preview section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">MY WORK</p>
-                        <h2>See what I can do.</h2>
-                        <p>Explore my sample projects and see how I approach data management, research, organization, and administrative support.</p>
-                        <a href="#portfolio" class="button button-primary">View My Portfolio</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- WORKFLOW -->
-            <section class="workflow section section-light">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">MY APPROACH</p>
-                        <h2>A simple workflow for every task.</h2>
-                    </div>
-
-                    <div class="workflow-grid">
-                        <div class="workflow-step">
-                            <span>01</span>
-                            <h3>Understand</h3>
-                            <p>Confirm the task, priorities, deadline, and preferred tools before starting.</p>
-                        </div>
-                        <div class="workflow-line"></div>
-                        <div class="workflow-step">
-                            <span>02</span>
-                            <h3>Organize</h3>
-                            <p>Set up a clear structure or checklist before beginning the work.</p>
-                        </div>
-                        <div class="workflow-line"></div>
-                        <div class="workflow-step">
-                            <span>03</span>
-                            <h3>Execute</h3>
-                            <p>Complete the task carefully, keeping formatting and naming consistent.</p>
-                        </div>
-                        <div class="workflow-line"></div>
-                        <div class="workflow-step">
-                            <span>04</span>
-                            <h3>Review</h3>
-                            <p>Double-check accuracy, links, and formatting before anything goes out.</p>
-                        </div>
-                        <div class="workflow-line"></div>
-                        <div class="workflow-step">
-                            <span>05</span>
-                            <h3>Deliver</h3>
-                            <p>Hand over the finished work in a clear, organized format.</p>
-                        </div>
-                        <div class="workflow-line"></div>
-                        <div class="workflow-step">
-                            <span>06</span>
-                            <h3>Update</h3>
-                            <p>Send a short end-of-day summary so you know what's done and what's next.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- TOOLS -->
-            <section id="tools" class="tools section">
-                <div class="container">
-                    <div class="section-heading">
-                        <p class="eyebrow">TOOLS</p>
-                        <h2>Tools I work with</h2>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3 class="tool-category-title">Admin</h3>
-                        <div class="tools-grid">
-                            <div class="tool-card"><div class="tool-icon">📩</div><h3>Gmail</h3><p>Email organization, management, and professional communication.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📅</div><h3>Google Calendar</h3><p>Scheduling, planning, and calendar organization.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📁</div><h3>Google Drive</h3><p>File storage, organization, sharing, and management.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📄</div><h3>Google Docs</h3><p>Collaborative document creation, editing, and formatting.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📝</div><h3>Microsoft Word</h3><p>Document creation, editing, and professional formatting.</p></div>
-                            <div class="tool-card"><div class="tool-icon">💻</div><h3>PowerPoint</h3><p>Presentations and visual reports.</p></div>
-                        </div>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3 class="tool-category-title">Data &amp; CRM</h3>
-                        <div class="tools-grid">
-                            <div class="tool-card"><div class="tool-icon">📊</div><h3>Microsoft Excel</h3><p>Data entry, cleaning, organization, and formulas.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📈</div><h3>Google Sheets</h3><p>Spreadsheet management, data organization, and collaboration.</p></div>
-                            <div class="tool-card"><div class="tool-icon">💡</div><h3>Zoho CRM</h3><p>Basic CRM practice, contact organization, and record management.</p></div>
-                            <div class="tool-card"><div class="tool-icon">⚡</div><h3>Zapier</h3><p>Exploring workflow automation and app integrations.</p></div>
-                        </div>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3 class="tool-category-title">Planning &amp; Content</h3>
-                        <div class="tools-grid">
-                            <div class="tool-card"><div class="tool-icon">🗒️</div><h3>Notion</h3><p>Note-taking, task management, and project organization.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📌</div><h3>Trello</h3><p>Organizing tasks, tracking workflows, and managing projects.</p></div>
-                            <div class="tool-card"><div class="tool-icon">🎯</div><h3>Asana</h3><p>Task management, project tracking, and team collaboration.</p></div>
-                            <div class="tool-card"><div class="tool-icon">🎨</div><h3>Canva</h3><p>Creating and designing visual content and graphics.</p></div>
-                            <div class="tool-card"><div class="tool-icon">🎬</div><h3>CapCut</h3><p>Video editing, effects, and transitions.</p></div>
-                            <div class="tool-card"><div class="tool-icon">📹</div><h3>Edits</h3><p>Short-form video editing and content creation.</p></div>
-                            <div class="tool-card"><div class="tool-icon">🛍️</div><h3>Gumroad</h3><p>Digital product publishing and storefront management.</p></div>
-                            <div class="tool-card"><div class="tool-icon">☕</div><h3>Ko-fi</h3><p>Digital product listings and creator storefront management.</p></div>
-                        </div>
-                    </div>
-
-                    <p class="tools-note"><strong>Also:</strong> HTML, CSS, and GitHub for website development projects and maintenance.</p>
-                </div>
-            </section>
-
-            <!-- RESUME -->
-            <section id="resume" class="resume section section-light">
-                <div class="container resume-container">
-                    <div class="resume-content">
-                        <p class="eyebrow">RESUME</p>
-                        <h2>Want to know more about my experience?</h2>
-                        <p>Take a look at my resume for a quick overview of my skills, education, tools, and experience.</p>
-                        <a href="files/Mehwish-Asghar-Resume.pdf" class="button button-primary" download>Download Resume</a>
-                    </div>
-
-                    <div class="resume-preview">
-                        <div class="resume-paper">
-                            <img src="images/resume-preview.jpg" alt="Mehwish Asghar Resume Preview">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CONTACT -->
-            <section id="contact" class="contact section">
-                <div class="container contact-container">
-                    <div class="contact-content">
-                        <p class="eyebrow">CONTACT</p>
-                        <h2>Let's work together.</h2>
-                        <p>Tell me what’s taking up your time, and I’ll reply within 24 hours. Prefer to talk first? Book a free 15-minute call with me using Calendly.</p>
-
-                        <div class="contact-details">
-                            <div>
-                                <span>Email</span>
-                                <a href="mailto:mehwishasghar958@gmail.com">mehwishasghar958@gmail.com</a>
-                            </div>
-                            <div>
-                                <span>Location</span>
-                                <p>Lahore, Pakistan (UTC+5)</p>
-                            </div>
-                            <div>
-                                <span>Availability</span>
-                                <p>Open to Full-time, Part-time, & Freelance Opportunities</p>
-                            </div>
-                            <div>
-                                <span>Let's Connect</span>
-                                <a href="https://www.instagram.com/12___________mimi46" target="_blank" rel="noopener noreferrer">Instagram</a>
-                                • <a href="https://www.linkedin.com/in/mehwish-asghar-aba1ba385/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                • <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer">Calendly</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="contact-form" action="https://formspree.io/f/mnpdpojw" method="POST">
-                        <input type="hidden" name="_subject" value="New Portfolio Inquiry — Mehwish">
-
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label id="subject-label" for="subject-btn">What do you need help with?</label>
-                            <div class="custom-select">
-                                <input type="hidden" name="service" id="service" value="" required>
-                                <button type="button" id="subject-btn" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="subject-label">
-                                    <span class="select-value">Choose a service</span>
-                                </button>
-                                <ul class="select-menu" role="listbox" aria-labelledby="subject-label">
-                                    <li role="option" aria-selected="false">Inbox, calendar &amp; file management</li>
-                                    <li role="option" aria-selected="false">CRM &amp; customer records</li>
-                                    <li role="option" aria-selected="false">Spreadsheets, data, research &amp; systems</li>
-                                    <li role="option" aria-selected="false">Content, brand kits &amp; creator support</li>
-                                    <li role="option" aria-selected="false">Website development &amp; maintenance</li>
-                                    <li role="option" aria-selected="false">Something else / not sure yet</li>
-                                </ul>
-                            </div>
-                            <p class="field-error" hidden>Please choose a service.</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Tell me a little about what you need help with..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="button button-primary">Send Message</button>
-                    </form>
-                </div>
-            </section>
-
-        </div> <!-- END HOME VIEW -->
 
         <!-- =====================================================
-             PORTFOLIO VIEW
+             ABOUT
         ====================================================== -->
-        <div id="view-portfolio" class="view">
 
-            <section id="portfolio" class="portfolio section">
-                <div class="container">
+        <section id="about" class="about section">
 
-                    <div class="section-heading">
-                        <p class="eyebrow">FEATURED WORK</p>
-                        <h1>Portfolio Projects</h1>
-                        <p>Systems, workflows, and content support that keep creators and small online businesses organized, so they can focus on growing.</p>
-                        <p class="section-note">Projects 1–2 were created for Choyeo Digitals. Projects 3–10 use fictional sample data created for practice.</p>
+            <div class="container about-container">
+
+                <div class="about-image">
+
+                    <img src="images/stockimage1.png"
+                        alt="An image of Kiana and her work experience as an office admin intern">
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p class="eyebrow">
+                        ABOUT ME
+                    </p>
+
+                    <h2>
+                        Organized, detail-oriented,
+                        and always ready to learn.
+                    </h2>
+
+                    <p>
+                        I’m a virtual assistant and Computer Science student based in the Philippines.
+                        On the side, I also run my own small digital product shop, Choyeo Digitals, where I manage
+                        everything
+                        from product listings and customer inquiries to content scheduling and product creation.
+                        I’ve also gained experience in data entry and records verification at a local government
+                        office, along with writing and editing for my college publication as an Associate Editor.
+                    </p>
+
+                    <p>
+                        I'm most comfortable with the tools creators and small online businesses actually use: Google
+                        Workspace, Notion, Asana, Canva, Excel, and Zoho CRM. I learn new tools quickly,
+                        communicate clearly in writing, and send regular updates if needed so you always know where
+                        things stand.
+                    </p>
+
+
+                    <div class="strengths">
+
+                        <div class="strength">
+                            <strong>✓ Attention to Detail</strong>
+                            <p>
+                                Verified and processed 50+ resident ID cards and records against source documents.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Organization</strong>
+                            <p>
+                                Built Notion systems for content, listings, and scheduling across 5 digital products.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Adaptability</strong>
+                            <p>
+                                Learned Zoho CRM and Asana through hands-on practice and applied them in real
+                                projects.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Reliability</strong>
+                            <p>
+                                Met publication deadlines at The Datalink and published 3 feature articles, and
+                                coordinated 4 teams for a school event.
+                            </p>
+                        </div>
+
                     </div>
 
-                    <section class="portfolio-sub-section"><h2 id="section-1">Creator &amp; Online Business Support</h2></section>
+                </div>
 
-                    <article class="project">
-                        <div class="project-info">
-                            <span class="project-number">01</span>
-                            <p class="project-category">SOCIAL MEDIA MANAGEMENT</p>
-                            <h3>Social Media Content Planning &amp; Management</h3>
-                            <p>Built a multi-platform content plan in Notion for Choyeo Digitals, so every post has a clear platform, goal, and purpose before it is created.</p>
-                            <div class="project-tags"><span>Content Planning</span><span>Content Scheduling</span><span>Social Media</span><span>Notion</span></div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section id="services" class="services section section-light">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        SERVICES
+                    </p>
+
+                    <h2>
+                        How I can support you
+                    </h2>
+
+                    <p>
+                        Reliable admin, operations, and creator support that keeps your everyday work organized and seamless.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+                    <!-- Service 1 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            📩
                         </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">CONTENT PLAN</span>
-                                <video src="videos/social-media-content-plan.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>The plan:</strong> A Notion workspace that tracks each post by platform, content type, goal, product, creative direction, and call to action.</p>
-                            </div>
-                            <div class="showcase-divider"><span>From Plan to Post</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">CONTENT IMPLEMENTATION</span>
-                                <img src="images/social-media-content-implementation.png" loading="lazy" alt="Social media posts created from the content plan">
-                                <p class="showcase-caption"><strong>The result:</strong> Turned planned ideas into finished posts, adapting each one to its platform format, message, visuals, and call to action.</p>
-                            </div>
-                        </div>
+
+                        <h3>
+                            Inbox, Calendar & File Management
+                        </h3>
+
+                        <p>
+                            A clutter-free inbox, a schedule that runs smoothly, and files you can find in seconds.
+                        </p>
+
+                        <ul>
+                            <li>Organized inbox with labels, filters, and brand outreach handling</li>
+                            <li>Conflict-free calendar scheduling</li>
+                            <li>Clear folder structures and naming conventions</li>
+                            <li>Polished documents and proposals</li>
+                            <li>Invoice preparation and receipt tracking</li>
+                        </ul>
+
                     </article>
 
-                    <article class="project project-reverse">
-                        <div class="project-info">
-                            <span class="project-number">02</span>
-                            <p class="project-category">CONTENT CREATION</p>
-                            <h3>Social Media Graphic Design &amp; Content Creation</h3>
-                            <p>Designed branded graphics for Choyeo Digitals with clear messaging and a consistent look across social media platforms.</p>
-                            <div class="project-tags"><span>Canva</span><span>Graphic Design</span><span>Content Creation</span><span>Branding</span></div>
+
+                    <!-- Service 2 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            📁
                         </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">SOCIAL MEDIA DESIGNS</span>
-                                <img src="images/social-media-designs.png" loading="lazy" alt="Social media graphics created in Canva">
-                                <p class="showcase-caption"><strong>Designs:</strong> Educational posts, product promotions, and interactive content built in Canva with a consistent brand style.</p>
-                            </div>
-                            <div class="showcase-divider"><span>Product Promotion</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">PRODUCT CONTENT</span>
-                                <img src="images/social-media-product-content.png" loading="lazy" alt="Product promotional graphics">
-                                <p class="showcase-caption"><strong>Product content:</strong> Promotional graphics that explain product benefits at a glance while staying true to the brand.</p>
-                            </div>
-                        </div>
+
+                        <h3>
+                            CRM & Customer Records
+                        </h3>
+
+                        <p>
+                            No lead slips through, and every new client gets a smooth, professional start.
+                        </p>
+
+                        <ul>
+                            <li>Up-to-date contact and lead records</li>
+                            <li>Follow-up tracking and task reminders</li>
+                            <li>Customer inquiries handled and answered</li>
+                            <li>Verified, duplicate-free records</li>
+                            <li><b>Backend client onboarding:</b> intake forms, welcome emails, and onboarding checklists</li>
+                        </ul>
+
                     </article>
 
-                    <article class="project">
-                        <div class="project-info">
-                            <span class="project-number">03</span>
-                            <p class="project-category">CRM &amp; CUSTOMER DATA</p>
-                            <h3>CRM Contact &amp; Lead Management</h3>
-                            <p>Set up and maintained a Zoho CRM with fictional practice data, keeping contacts and leads organized so follow-ups are not missed.</p>
-                            <div class="project-tags"><span>Zoho CRM</span><span>Contact Management</span><span>Lead Tracking</span><span>Customer Data</span></div>
+
+                    <!-- Service 3 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            🔎
                         </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">CONTACT MANAGEMENT</span>
-                                <img src="images/zoho-crm-contacts.jpg" loading="lazy" alt="Zoho CRM contact list">
-                                <p class="showcase-caption"><strong>Contact list:</strong> Standardized contact details and lead statuses so the list is easy to filter, track, and follow up on.</p>
-                            </div>
-                            <div class="showcase-divider"><span>Contact Record &amp; Follow-Up</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">CRM RECORD</span>
-                                <video src="videos/zoho-contact-record.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>Contact record:</strong> Linked each contact to its products, deals, meetings, tasks, and follow-up email workflows in one place.</p>
-                            </div>
-                        </div>
+
+                        <h3>
+                            Spreadsheets, Data, Research & Systems
+                        </h3>
+
+                        <p>
+                            Messy information becomes clean data, clear trackers, and systems that save you hours.
+                        </p>
+
+                        <ul>
+                            <li>Clean, standardized data with duplicates removed</li>
+                            <li>Tracking sheets and monthly summaries you can act on</li>
+                            <li>Competitor and lead list research</li>
+                            <li>Ongoing updates and maintenance of existing systems</li>
+                            <li><b>Custom systems:</b> trackers, dashboards, and automated workflows built to fit your business</li>
+                        </ul>
+
                     </article>
 
-                    <section class="portfolio-sub-section"><h2 id="section-2">Admin &amp; Operations Systems</h2></section>
 
-                    <article class="project project-reverse">
-                        <div class="project-info">
-                            <span class="project-number">04</span>
-                            <p class="project-category">ADMINISTRATION</p>
-                            <h3>Email Organization System</h3>
-                            <p>Built a simple inbox system that separates urgent messages from everything else, so important emails do not get buried.</p>
-                            <div class="project-tags"><span>Email Management</span><span>Organization</span><span>Prioritization</span></div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">BEFORE</span>
-                                <img src="images/email-system-before.png" loading="lazy" alt="Unorganized email inbox">
-                                <p class="showcase-caption"><strong>Before:</strong> Read and unread messages mixed together, with no clear way to tell what needs a reply first.</p>
-                            </div>
-                            <div class="showcase-divider"><span>After Organization</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">AFTER</span>
-                                <img src="images/email-system-after.png" loading="lazy" alt="Organized email inbox">
-                                <p class="showcase-caption"><strong>After:</strong> Sorted messages by priority and purpose, archived low-priority emails, and kept high-priority ones in the main inbox for quick access.</p>
-                            </div>
-                        </div>
-                    </article>
+                    <!-- Service 4 -->
+                    <article class="service-card">
 
-                    <article class="project">
-                        <div class="project-info">
-                            <span class="project-number">05</span>
-                            <p class="project-category">SCHEDULING</p>
-                            <h3>Calendar &amp; Scheduling Management</h3>
-                            <p>Designed a weekly schedule for a fictional client that organizes meetings, deadlines, and admin tasks without conflicts.</p>
-                            <div class="project-tags"><span>Google Calendar</span><span>Scheduling</span><span>Organization</span></div>
+                        <div class="card-icon">
+                            📅
                         </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-calendar-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>Before:</strong> Overlapping commitments, inconsistent event organization, and little time left for focused work.</p>
-                            </div>
-                            <div class="showcase-divider"><span>After Organization</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-calendar-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>After:</strong> Resolved conflicts, color-coded events and tasks by type, and balanced the week to leave room for focused work.</p>
-                            </div>
-                        </div>
-                    </article>
 
-                    <article class="project project-reverse">
-                        <div class="project-info">
-                            <span class="project-number">06</span>
-                            <p class="project-category">FILE MANAGEMENT</p>
-                            <h3>Digital File Organization</h3>
-                            <p>Reorganized a fictional client's files with a clear folder hierarchy and a consistent naming convention.</p>
-                            <div class="project-tags"><span>File Management</span><span>Organization</span><span>Documentation</span></div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-file-organization-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>Before:</strong> Files scattered across folders with inconsistent names, making documents hard to find.</p>
-                            </div>
-                            <div class="showcase-divider"><span>After Organization</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-file-organization-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>After:</strong> Created a folder hierarchy, grouped related files, and applied consistent names so everything is easy to find and share.</p>
-                            </div>
-                        </div>
-                    </article>
+                        <h3>
+                            Content, Brand Kits & Creator Support
+                        </h3>
 
-                    <article class="project">
-                        <div class="project-info">
-                            <span class="project-number">07</span>
-                            <p class="project-category">DOCUMENTATION</p>
-                            <h3>Document Formatting</h3>
-                            <p>Turned an unstructured business proposal into a clean, professional document that is easy to scan and review.</p>
-                            <div class="project-tags"><span>Microsoft Word</span><span>Formatting</span><span>Documentation</span></div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-document-proposal-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>Before:</strong> Inconsistent formatting and no clear sections, so key information was hard to find.</p>
-                            </div>
-                            <div class="showcase-divider"><span>After Formatting</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-document-proposal-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
-                                <p class="showcase-caption"><strong>After:</strong> Organized the content into clear sections, applied consistent formatting, and added tables for quick review.</p>
-                            </div>
-                        </div>
-                    </article>
+                        <p>
+                            A consistent brand, and a content calendar that posts itself.
+                        </p>
 
-                    <section class="portfolio-sub-section"><h2 id="section-3">Data, Reporting &amp; Research</h2></section>
-
-                    <article class="project project-reverse">
-                        <div class="project-info">
-                            <span class="project-number">08</span>
-                            <p class="project-category">DATA MANAGEMENT</p>
-                            <h3>Data Cleaning &amp; Spreadsheet Organization</h3>
-                            <p>Cleaned a fictional customer contact database so it is accurate, consistent, and ready to use.</p>
-                            <div class="project-tags"><span>Excel</span><span>Data Cleaning</span><span>Formatting</span><span>Data Organization</span></div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="showcase-item">
-                                <span class="showcase-label">BEFORE</span>
-                                <img src="images/data-cleaning-before.jpg" loading="lazy" alt="Spreadsheet with duplicates">
-                                <p class="showcase-caption"><strong>Before:</strong> Duplicate entries, inconsistent formatting, and disorganized columns.</p>
-                            </div>
-                            <div class="showcase-divider"><span>After Organization</span></div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">AFTER</span>
-                                <img src="images/data-cleaning-after.jpg" loading="lazy" alt="Cleaned customer database">
-                                <p class="showcase-caption"><strong>After:</strong> Removed duplicates, standardized formatting, organized columns, added data checks, and built a summary table and chart.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="project-info">
-                            <span class="project-number">09</span>
-                            <p class="project-category">REPORTING</p>
-                            <h3>Sales Tracking &amp; Reporting</h3>
-                            <p>Built a sales tracker that turns raw transactions into a monthly report, so a small shop owner can see how sales are performing at a glance.</p>
-                            <div class="project-tags"><span>Excel</span><span>Data Entry</span><span>Formulas</span><span>Reporting</span></div>
-                        </div>
-                        <div class="project-visual image-showcase">
-                            <div class="showcase-item">
-                                <span class="showcase-label">SALES TRACKER</span>
-                                <img src="images/sales-tracker-sample.jpg" loading="lazy" alt="Sales tracker spreadsheet">
-                                <p class="showcase-caption"><strong>Tracker:</strong> Organized transactions into structured fields with consistent formatting and calculated revenue.</p>
-                            </div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">SALES REPORT</span>
-                                <img src="images/sales-report-sample.jpg" loading="lazy" alt="Monthly sales report">
-                                <p class="showcase-caption"><strong>Report:</strong> Summarized the data into a monthly report with key metrics, tables, and charts.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-reverse">
-                        <div class="project-info">
-                            <span class="project-number">10</span>
-                            <p class="project-category">RESEARCH</p>
-                            <h3>Internet Research &amp; Competitor Analysis</h3>
-                            <p>Researched competing digital product businesses and compared them side by side to surface patterns, gaps, and recommendations.</p>
-                            <div class="project-tags"><span>Internet Research</span><span>Data Collection</span><span>Excel</span><span>Analysis</span></div>
-                        </div>
-                        <div class="project-visual image-showcase">
-                            <div class="showcase-item">
-                                <span class="showcase-label">RESEARCH</span>
-                                <img src="images/internet-research-sample.jpg" loading="lazy" alt="Research spreadsheet">
-                                <p class="showcase-caption"><strong>Research:</strong> Gathered product, pricing, category, and business details into one spreadsheet.</p>
-                            </div>
-                            <div class="showcase-item">
-                                <span class="showcase-label">COMPETITOR ANALYSIS</span>
-                                <img src="images/competitor-analysis-sample.jpg" loading="lazy" alt="Competitor comparison table">
-                                <p class="showcase-caption"><strong>Analysis:</strong> Compared competitors in one table, highlighted key differences and patterns, and added findings with recommendations.</p>
-                            </div>
-                        </div>
+                        <ul>
+                            <li><b>Brand kit and media kit design</b> that makes you look professional and brand-deal ready</li>
+                            <li>Notion content calendars</li>
+                            <li>Canva graphics and templates</li>
+                            <li>Post scheduling, ready to publish</li>
+                            <li>Video editing and promotional reels</li>
+                        </ul>
                     </article>
 
                 </div>
-            </section>
 
-        </div> <!-- END PORTFOLIO VIEW -->
+                <p class="addon-note">
+                    <span class="addon-note-icon">🌐</span>
+                    <span><strong>Website development &amp; maintenance:</strong> a website that stays fresh, works on every 
+                        device, and gets you leads. This covers content updates, simple landing pages, responsive design, and link and mobile testing.</span>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             PORTFOLIO PREVIEW
+        ====================================================== -->
+
+        <section class="portfolio-preview section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        MY WORK
+                    </p>
+
+                    <h2>
+                        See what I can do.
+                    </h2>
+
+                    <p>
+                        Explore my sample projects and see how I approach
+                        data management, research, organization, and
+                        administrative support.
+                    </p>
+
+                    <a href="portfolio.html" class="button button-primary">
+                        View My Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WORKFLOW
+        ====================================================== -->
+
+        <section class="workflow section section-light">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        MY APPROACH
+                    </p>
+
+                    <h2>
+                        A simple workflow for every task.
+                    </h2>
+
+                </div>
+
+
+                <div class="workflow-grid">
+
+                    <div class="workflow-step">
+
+                        <span>01</span>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Confirm the task, priorities, deadline, and preferred tools before starting.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>02</span>
+
+                        <h3>
+                            Organize
+                        </h3>
+
+                        <p>
+                            Set up a clear structure or checklist before beginning the work.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>03</span>
+
+                        <h3>
+                            Execute
+                        </h3>
+
+                        <p>
+                            Complete the task carefully, keeping formatting and naming consistent.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>04</span>
+
+                        <h3>
+                            Review
+                        </h3>
+
+                        <p>
+                            Double-check accuracy, links, and formatting before anything goes out.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>05</span>
+
+                        <h3>
+                            Deliver
+                        </h3>
+
+                        <p>
+                            Hand over the finished work in a clear, organized format.
+                        </p>
+
+                    </div>
+
+                    <div class="workflow-line"></div>
+
+                    <div class="workflow-step">
+
+                        <span>06</span>
+
+                        <h3>
+                            Update
+                        </h3>
+
+                        <p>
+                            Send a short end-of-day summary so you know what's done and what's next.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+     TOOLS
+====================================================== -->
+
+        <section id="tools" class="tools section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">TOOLS</p>
+                    <h2>Tools I work with</h2>
+                </div>
+
+
+                <!-- ADMIN -->
+                <div class="tool-category">
+
+                    <h3 class="tool-category-title">Admin</h3>
+
+                    <div class="tools-grid">
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📩</div>
+                            <h3>Gmail</h3>
+                            <p>
+                                Email organization, management,
+                                and professional communication.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📅</div>
+                            <h3>Google Calendar</h3>
+                            <p>
+                                Scheduling, planning, and
+                                calendar organization.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📁</div>
+                            <h3>Google Drive</h3>
+                            <p>
+                                File storage, organization,
+                                sharing, and management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📄</div>
+                            <h3>Google Docs</h3>
+                            <p>
+                                Collaborative document creation,
+                                editing, and formatting.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📝</div>
+                            <h3>Microsoft Word</h3>
+                            <p>
+                                Document creation, editing,
+                                and professional formatting.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">💻</div>
+                            <h3>PowerPoint</h3>
+                            <p>
+                                Presentations and visual reports.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA & CRM -->
+                <div class="tool-category">
+
+                    <h3 class="tool-category-title">Data &amp; CRM</h3>
+
+                    <div class="tools-grid">
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📊</div>
+                            <h3>Microsoft Excel</h3>
+                            <p>
+                                Data entry, cleaning,
+                                organization, and formulas.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📈</div>
+                            <h3>Google Sheets</h3>
+                            <p>
+                                Spreadsheet management, data
+                                organization, and collaboration.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">💡</div>
+                            <h3>Zoho CRM</h3>
+                            <p>
+                                Basic CRM practice, contact
+                                organization, and record management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">⚡</div>
+                            <h3>Zapier</h3>
+                            <p>
+                                Exploring workflow automation
+                                and app integrations.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PLANNING & CONTENT -->
+                <div class="tool-category">
+
+                    <h3 class="tool-category-title">
+                        Planning &amp; Content
+                    </h3>
+
+                    <div class="tools-grid">
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🗒️</div>
+                            <h3>Notion</h3>
+                            <p>
+                                Note-taking, task management,
+                                and project organization.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📌</div>
+                            <h3>Trello</h3>
+                            <p>
+                                Organizing tasks, tracking
+                                workflows, and managing projects.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎯</div>
+                            <h3>Asana</h3>
+                            <p>
+                                Task management, project tracking,
+                                and team collaboration.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎨</div>
+                            <h3>Canva</h3>
+                            <p>
+                                Creating and designing visual
+                                content and graphics.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎬</div>
+                            <h3>CapCut</h3>
+                            <p>Video editing, effects, and transitions.</p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📹</div>
+                            <h3>Edits</h3>
+                            <p>Short-form video editing and content creation.</p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🛍️</div>
+                            <h3>Gumroad</h3>
+                            <p>
+                                Digital product publishing
+                                and storefront management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">☕</div>
+                            <h3>Ko-fi</h3>
+                            <p>
+                                Digital product listings
+                                and creator storefront management.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADDITIONAL SKILLS -->
+                <center>
+                    <p class="tools-note">
+                        <strong>Also:</strong> HTML, CSS, and GitHub for website development projects and maintenance.
+                    </p>
+                </center>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESUME
+        ====================================================== -->
+
+        <section id="resume" class="resume section section-light">
+
+            <div class="container resume-container">
+
+                <div class="resume-content">
+
+                    <p class="eyebrow">
+                        RESUME
+                    </p>
+
+                    <h2>
+                        Want to know more about my experience?
+                    </h2>
+
+                    <p>
+                        Take a look at my resume for a quick overview
+                        of my skills, education, tools, and experience.
+                    </p>
+
+                    <a href="files/Kiana-Yeo-Resume.pdf" class="button button-primary" download>
+                        Download Resume
+                    </a>
+
+                </div>
+
+
+                <div class="resume-preview">
+
+                    <div class="resume-paper">
+
+                        <img src="images/resume-preview.jpg" alt="Resume preview image">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact" class="contact section">
+
+            <div class="container contact-container">
+
+                <div class="contact-content">
+
+                    <p class="eyebrow">
+                        CONTACT
+                    </p>
+
+                    <h2>
+                        Let's work together.
+                    </h2>
+
+                    <p>
+                        Tell me what’s taking up your time, and I’ll reply within 24 hours.
+                        Prefer to talk first? Book a free 15-minute call with me using Calendly.
+                    </p>
+
+                    <div class="contact-details">
+
+                        <div>
+                            <span>Email</span>
+
+                            <a href="mailto:kianayeo15@gmail.com">
+                                kianayeo15@gmail.com
+                            </a>
+                        </div>
+
+                        <div>
+                            <span>Location</span>
+
+                            <p>
+                                Philippines (UTC+8)
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>Availability</span>
+
+                            <p>
+                                Open to Full-time, Part-time, & Freelance Opportunities
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>Let's Connect</span>
+
+                            <a href="https://www.instagram.com/sortedbykia/" target="_blank" rel="noopener noreferrer">
+                                Instagram
+                            </a> • <a href="https://github.com/kiacodesss" target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <form class="contact-form" action="https://formspree.io/f/moeqnewv" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Inquiry — Kiana Yeo">
+
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <!-- What do you need help with? -->
+                    <div class="form-group">
+                        <label id="subject-label" for="subject-btn">
+                            What do you need help with?
+                        </label>
+
+                        <div class="custom-select">
+
+                            <!-- Formspree collects this hidden input -->
+                            <input type="hidden" name="service" id="service" value="" required>
+
+                            <button type="button" id="subject-btn" class="select-trigger" aria-haspopup="listbox"
+                                aria-expanded="false" aria-labelledby="subject-label subject-btn">
+                                <span class="select-value">
+                                    Choose a service
+                                </span>
+                            </button>
+
+                            <ul class="select-menu" role="listbox" aria-labelledby="subject-label">
+                                <li role="option" aria-selected="false">
+                                    Inbox, calendar &amp; file management
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    CRM &amp; customer records
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Spreadsheets, data, research &amp; systems
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Content, brand kits &amp; creator support
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Website development &amp; maintenance
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Something else / not sure yet
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="field-error" hidden>
+                            Please choose a service.
+                        </p>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Tell me a little about what you need help with..." required></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="button button-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
+
+            </div>
+
+        </section>
 
     </main>
+
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
+
     <footer class="footer">
+
         <div class="container footer-container">
+
             <div>
-                <a href="#home" class="logo"><span>Mehwish</span></a>
-                <p>Admin & Operations VA for Creators and Online Businesses</p>
+
+                <a href="#home" class="logo">
+                    Kiana Yeo
+                </a>
+
+                <p>
+                    Admin & Operations VA for Creators and Online Businesses
+                </p>
+
             </div>
+
 
             <div class="footer-links">
+
                 <a href="#home">Home</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="portfolio.html">Portfolio</a>
                 <a href="#contact">Contact</a>
-                <a href="https://www.instagram.com/12___________mimi46" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.linkedin.com/in/mehwish-asghar-aba1ba385/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                <a href="https://www.instagram.com/sortedbykia/" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                </a>
+                <a href="https://github.com/kiacodesss" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
             </div>
 
-            <p class="copyright">© 2026 Mehwish. All rights reserved.</p>
+
+            <p class="copyright">
+                © 2026 Kiana Yeo. All rights reserved.
+            </p>
+
         </div>
+
     </footer>
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
-    
     <!-- Mobile menu toggle -->
     <script>
         (function () {
@@ -1117,29 +1115,35 @@
                 setOpen(!nav.classList.contains("open"));
             });
 
+            // Close after tapping any link in the menu
             nav.addEventListener("click", (e) => {
                 if (e.target.closest("a")) setOpen(false);
             });
 
+            // Close when tapping outside the menu
             document.addEventListener("click", (e) => {
                 if (!nav.contains(e.target) && !button.contains(e.target)) setOpen(false);
             });
 
+            // Close with Escape
             document.addEventListener("keydown", (e) => {
                 if (e.key === "Escape") setOpen(false);
             });
 
+            // Reset when resizing up to the desktop layout
             window.matchMedia("(min-width: 651px)").addEventListener("change", (e) => {
                 if (e.matches) setOpen(false);
             });
         })();
     </script>
 
+
     <!-- Contact form custom dropdown -->
     <script>
         (function () {
             const form = document.querySelector(".contact-form");
             const select = document.querySelector(".custom-select");
+
             if (!form || !select) return;
 
             const trigger = select.querySelector(".select-trigger");
@@ -1150,138 +1154,142 @@
 
             let active = -1;
 
+            // Highlight the active option
             const highlight = () => {
                 options.forEach((option, index) => {
                     option.classList.toggle("active", index === active);
                 });
             };
 
+            // Open or close the dropdown
             const setOpen = (open) => {
                 select.classList.toggle("open", open);
                 trigger.setAttribute("aria-expanded", String(open));
+
                 if (open) {
-                    active = Math.max(options.findIndex(option => option.getAttribute("aria-selected") === "true"), 0);
+                    active = Math.max(
+                        options.findIndex(
+                            option => option.getAttribute("aria-selected") === "true"
+                        ),
+                        0
+                    );
+
                     highlight();
                 }
             };
 
+            // Select a service
             const choose = (index) => {
                 if (!options[index]) return;
+
                 const selectedService = options[index].textContent.trim();
-                options.forEach(option => option.setAttribute("aria-selected", "false"));
+
+                // Update selected option
+                options.forEach(option => {
+                    option.setAttribute("aria-selected", "false");
+                });
+
                 options[index].setAttribute("aria-selected", "true");
+
+                // Update the visible dropdown label
                 label.textContent = selectedService;
+
+                // IMPORTANT: Set the value Formspree will receive
                 input.value = selectedService;
+
+                // Update visual states
                 select.classList.add("has-value");
                 select.classList.remove("invalid");
+
                 error.hidden = true;
+
                 setOpen(false);
+
                 trigger.focus();
             };
 
+            // Toggle dropdown
             trigger.addEventListener("click", () => {
                 setOpen(!select.classList.contains("open"));
             });
 
+            // Keyboard navigation
             trigger.addEventListener("keydown", (event) => {
                 const isOpen = select.classList.contains("open");
+
                 if (event.key === "ArrowDown" || event.key === "ArrowUp") {
                     event.preventDefault();
-                    if (!isOpen) { setOpen(true); return; }
+
+                    if (!isOpen) {
+                        setOpen(true);
+                        return;
+                    }
+
                     const direction = event.key === "ArrowDown" ? 1 : -1;
-                    active = (active + direction + options.length) % options.length;
+
+                    active = (
+                        active + direction + options.length
+                    ) % options.length;
+
                     highlight();
-                } else if ((event.key === "Enter" || event.key === " ") && isOpen) {
+
+                } else if (
+                    (event.key === "Enter" || event.key === " ") &&
+                    isOpen
+                ) {
                     event.preventDefault();
+
                     choose(active);
+
                 } else if (event.key === "Escape") {
                     setOpen(false);
                 }
             });
 
+            // Prevent spacebar from scrolling while interacting
             trigger.addEventListener("keyup", (event) => {
-                if (event.key === " ") event.preventDefault();
+                if (event.key === " ") {
+                    event.preventDefault();
+                }
             });
 
+            // Click an option
             options.forEach((option, index) => {
-                option.addEventListener("click", () => choose(index));
+                option.addEventListener("click", () => {
+                    choose(index);
+                });
             });
 
+            // Close dropdown when clicking outside
             document.addEventListener("click", (event) => {
-                if (!select.contains(event.target)) setOpen(false);
+                if (!select.contains(event.target)) {
+                    setOpen(false);
+                }
             });
 
+            // Validate before submitting to Formspree
             form.addEventListener("submit", (event) => {
+
+                // Ensure the service field has a value
                 if (!input.value.trim()) {
                     event.preventDefault();
+
                     select.classList.add("invalid");
                     error.hidden = false;
+
                     trigger.focus();
+
                     return;
                 }
+
+                // Ensure the value is included in the submission
                 input.value = input.value.trim();
-            });
-        })();
-    </script>
 
-    <!-- VIEW ROUTER (Home / Portfolio switching) -->
-    <script>
-        (function () {
-            var homeView = document.getElementById("view-home");
-            var portfolioView = document.getElementById("view-portfolio");
-            var portfolioRoutes = ["portfolio", "section-1", "section-2", "section-3"];
-
-            if (!homeView || !portfolioView) return;
-
-            function showView(name) {
-                homeView.classList.toggle("active", name === "home");
-                portfolioView.classList.toggle("active", name === "portfolio");
-            }
-
-            function navigate(target) {
-                var hash = (target || "").replace(/^#/, "");
-                var isPortfolio = portfolioRoutes.indexOf(hash) > -1;
-
-                showView(isPortfolio ? "portfolio" : "home");
-
-                // Close mobile menu
-                var nav = document.getElementById("main-nav");
-                if (nav) nav.classList.remove("open");
-                var btn = document.querySelector(".menu-button");
-                if (btn) {
-                    btn.setAttribute("aria-expanded", "false");
-                    btn.textContent = "☰";
-                }
-
-                // Scroll after display is applied
-                setTimeout(function () {
-                    if (hash) {
-                        var el = document.getElementById(hash);
-                        if (el) {
-                            el.scrollIntoView({ behavior: "smooth", block: "start" });
-                            return;
-                        }
-                    }
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                }, 50);
-            }
-
-            // Intercept all same-page anchor clicks
-            document.body.addEventListener("click", function (e) {
-                var link = e.target.closest('a[href^="#"]');
-                if (!link) return;
-                var href = link.getAttribute("href");
-                if (!href || href === "#") return;
-                e.preventDefault();
-                navigate(href);
             });
 
-            // Handle direct URL with hash on load
-            window.addEventListener("load", function () {
-                navigate(location.hash || "#home");
-            });
         })();
     </script>
 
 </body>
+
 </html>
