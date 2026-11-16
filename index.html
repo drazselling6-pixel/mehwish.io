@@ -159,16 +159,16 @@
         object-fit: cover;
     }
     
-    /* UPDATED: Hero Avatar Styling to make a perfect circle */
+    /* UPDATED: HERO AVATAR - PERFECT CIRCLE */
     .hero-avatar img {
         width: 100%;
-        border-radius: 50%;
-        aspect-ratio: 1 / 1; /* Ensures perfect square for a perfect circle */
-        object-fit: cover; /* Prevents image stretching */
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 50%; /* Forces it to be a circle */
+        aspect-ratio: 1 / 1; /* Forces a perfect square shape before rounding */
+        object-fit: cover; /* Prevents stretching */
         border: 4px solid var(--white);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 0;
-        background-color: transparent;
     }
 
     .showcase-item img, .showcase-item video { min-height: 250px; border-radius: 8px; border: 1px solid #eee7df; }
@@ -345,8 +345,8 @@
         .project, .project-reverse { grid-template-columns: 1fr; gap: 28px; }
         .project-reverse .project-info, .project-reverse .project-visual { order: 0; }
         
-        /* Center avatar on mobile */
-        .hero-avatar { margin: 0 auto; max-width: 400px; }
+        /* Center avatar on tablet/mobile */
+        .hero-avatar { margin: 0 auto; max-width: 400px; width: 100%; }
     }
 
     /* =========================================================
@@ -443,9 +443,10 @@
                         </p>
                     </div>
 
+                    <!-- HERO AVATAR / IMAGE PLACEMENT -->
                     <div class="hero-avatar">
-                        <!-- YOUR CUSTOM IMAGE IS NOW HERE -->
-                        <img src="profile (2).jpg" alt="Mehwish Profile Picture">
+                        <!-- Make sure this image is inside an 'images' folder -->
+                        <img src="images/profile (2).jpg" alt="Mehwish Profile Picture">
                     </div>
                 </div>
             </section>
@@ -1095,7 +1096,7 @@
 
     <!-- =====================================================
          JAVASCRIPT
-    ====================================================== -->
+    ===================================================== -->
     
     <!-- Mobile menu toggle -->
     <script>
