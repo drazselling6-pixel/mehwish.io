@@ -59,7 +59,7 @@
     }
 
     /* =========================================================
-       VIEW SWITCHING (Simulates separate pages)
+       VIEW SWITCHING
     ========================================================= */
     .view { display: none; }
     .view.active { display: block; }
@@ -88,7 +88,6 @@
     }
     .nav-container { min-height: 75px; display: flex; align-items: center; justify-content: space-between; }
 
-    /* STYLISH LOGO */
     .logo {
         font-family: 'DM Sans', sans-serif;
         font-weight: 700;
@@ -113,7 +112,6 @@
     .nav-links .nav-cta:hover { color: var(--white); }
     .menu-button { display: none; border: none; background: none; cursor: pointer; color: var(--text); font-size: 1.5rem; line-height: 1; padding: 6px 10px; border-radius: var(--radius-small); }
 
-    /* Portfolio dropdown */
     .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; z-index: 1001; min-width: 220px; padding: 8px 0; flex-direction: column; background: #F7F1E8; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
     .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: flex; }
@@ -142,7 +140,7 @@
     .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
     .availability { font-size: 0.85rem; color: var(--text-light); }
 
-    /* Placeholder image styling for other sections */
+    /* Placeholder image styling */
     .about-image img, .resume-paper img, .showcase-item img {
         width: 100%;
         min-height: 350px;
@@ -159,12 +157,12 @@
         object-fit: cover;
     }
 
-    /* UPDATED: Hero Avatar Styling to make a perfect circle */
+    /* Hero Avatar - perfect circle */
     .hero-avatar img {
         width: 100%;
         border-radius: 50%;
-        aspect-ratio: 1 / 1; /* Ensures perfect square for a perfect circle */
-        object-fit: cover; /* Prevents image stretching */
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
         border: 4px solid var(--white);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         padding: 0;
@@ -187,7 +185,6 @@
     .capability-card ul { list-style: none; color: #cfcfcf; font-size: 0.9rem; }
     .capability-card li { margin-bottom: 7px; }
 
-    /* "ALSO AVAILABLE" NOTES */
     .addon-note { display: flex; align-items: center; gap: 14px; max-width: 780px; margin: 40px auto 0; padding: 16px 24px; border: 1px dashed var(--accent-dark); border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.5; }
     .addon-note-icon { font-size: 1.4rem; flex-shrink: 0; }
     .addon-note strong { font-weight: 700; }
@@ -218,7 +215,7 @@
     .service-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-dark); font-weight: 700; }
 
     /* =========================================================
-       PORTFOLIO PREVIEW (homepage)
+       PORTFOLIO PREVIEW
     ========================================================= */
     .portfolio-preview { text-align: center; }
     .portfolio-preview h2 { font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.1; }
@@ -277,7 +274,6 @@
     .form-group input, .form-group textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-small); background: var(--white); color: var(--text); outline: none; resize: vertical; transition: border 0.2s ease; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-dark); }
 
-    /* Custom dropdown */
     .custom-select { position: relative; }
     .select-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-small); background: var(--white); color: var(--text-light); text-align: left; cursor: pointer; transition: border 0.2s ease; }
     .select-trigger::after { content: ""; flex-shrink: 0; width: 12px; height: 8px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2384947D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center; transition: transform 0.2s ease; }
@@ -345,8 +341,6 @@
         .copyright { text-align: center; }
         .project, .project-reverse { grid-template-columns: 1fr; gap: 28px; }
         .project-reverse .project-info, .project-reverse .project-visual { order: 0; }
-
-        /* Center avatar on mobile */
         .hero-avatar { margin: 0 auto; max-width: 400px; }
     }
 
@@ -380,8 +374,8 @@
     }
 
     /* =========================================================
-       PORTFOLIO SHOWCASE IMAGE FIX — ONLY affects .showcase-item img
-       (Homepage hero avatar, about image, resume preview are NOT touched)
+       PORTFOLIO SHOWCASE IMAGE FIX — ONLY affects portfolio images
+       (Homepage hero, about, resume are NOT touched)
     ========================================================= */
     .showcase-item img {
         width: 100%;
@@ -396,7 +390,6 @@
         padding: 0;
     }
 
-    /* Red warning box if a portfolio image is missing */
     .showcase-item img.img-missing {
         min-height: 160px;
         padding: 30px 20px;
@@ -474,8 +467,7 @@
                     </div>
 
                     <div class="hero-avatar">
-                        <!-- YOUR CUSTOM IMAGE IS NOW HERE — UNCHANGED -->
-                        <img src="profile (2).jpg" alt="Mehwish Profile Picture">
+                        <img src="profile.jpg" alt="Mehwish Profile Picture">
                     </div>
                 </div>
             </section>
@@ -538,7 +530,7 @@
             <section id="about" class="about section">
                 <div class="container about-container">
                     <div class="about-image">
-                        <img src="work.jpg" alt="Mehwish working">
+                        <img src="about.jpg" alt="Mehwish working">
                     </div>
 
                     <div class="about-content">
@@ -546,7 +538,7 @@
                         <h2>Organized, detail-oriented, and always ready to learn.</h2>
 
                         <p>
-                            I'm a virtual assistant and Computer Science student based in Lahore, Pakistan. On the side, I also run my own small digital product shop, Choyeo Digitals, where I manage everything from product listings and customer inquiries to content scheduling and product creation. I've also gained experience in data entry and records verification at a local government office, along with writing and editing for my college publication as an Associate Editor.
+                            I'm a virtual assistant and Computer Science student based in Lahore, Pakistan. On the side, I also run my own small digital product shop, Dreamy Digital Co., where I manage everything from product listings and customer inquiries to content scheduling and product creation. I've also gained experience in data entry and records verification at a local government office, along with writing and editing for my college publication as an Associate Editor.
                         </p>
                         <p>
                             I'm most comfortable with the tools creators and small online businesses actually use: Google Workspace, Notion, Asana, Canva, Excel, and Zoho CRM. I learn new tools quickly, communicate clearly in writing, and send regular updates if needed so you always know where things stand.
@@ -759,8 +751,17 @@
                         <p class="eyebrow">RESUME</p>
                         <h2>Want to know more about my experience?</h2>
                         <p>Take a look at my resume for a quick overview of my skills, education, tools, and experience.</p>
-                        <img src="resume.jpg" alt="Mehwish Asghar Resume Preview">
-                    </div
+                        <a href="resume.jpg" class="button button-primary" download="resume.jpg">Download Resume</a>
+                    </div>
+
+                    <div class="resume-preview">
+                        <div class="resume-paper">
+                            <img src="resume.jpg" alt="Mehwish Asghar Resume Preview">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- CONTACT -->
             <section id="contact" class="contact section">
                 <div class="container contact-container">
@@ -847,23 +848,24 @@
                         <p class="eyebrow">FEATURED WORK</p>
                         <h1>Portfolio Projects</h1>
                         <p>Systems, workflows, and content support that keep creators and small online businesses organized, so they can focus on growing.</p>
-                        <p class="section-note">Projects 1–2 were created for Choyeo Digitals. Projects 3–10 use fictional sample data created for practice.</p>
+                        <p class="section-note">Projects 1–2 were created for Dreamy Digital Co. Projects 3–10 use fictional sample data created for practice.</p>
                     </div>
 
                     <section class="portfolio-sub-section"><h2 id="section-1">Creator &amp; Online Business Support</h2></section>
 
+                    <!-- ============ PROJECT 01 ============ -->
                     <article class="project">
                         <div class="project-info">
                             <span class="project-number">01</span>
                             <p class="project-category">SOCIAL MEDIA MANAGEMENT</p>
                             <h3>Social Media Content Planning &amp; Management</h3>
-                            <p>Built a multi-platform content plan in Notion for Choyeo Digitals, so every post has a clear platform, goal, and purpose before it is created.</p>
+                            <p>Built a multi-platform content plan in Notion for Dreamy Digital Co., so every post has a clear platform, goal, and purpose before it is created.</p>
                             <div class="project-tags"><span>Content Planning</span><span>Content Scheduling</span><span>Social Media</span><span>Notion</span></div>
                         </div>
                         <div class="project-visual">
                             <div class="showcase-item">
                                 <span class="showcase-label">CONTENT PLAN</span>
-                                <img src="profile1.jpg" loading="lazy" alt="Notion content plan for Choyeo Digitals">
+                                <img src="profile1.jpg" loading="lazy" alt="Notion content plan for Dreamy Digital Co.">
                                 <p class="showcase-caption"><strong>The plan:</strong> A Notion workspace that tracks each post by platform, content type, goal, product, creative direction, and call to action.</p>
                             </div>
                             <div class="showcase-divider"><span>From Plan to Post</span></div>
@@ -875,12 +877,13 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 02 ============ -->
                     <article class="project project-reverse">
                         <div class="project-info">
                             <span class="project-number">02</span>
                             <p class="project-category">CONTENT CREATION</p>
                             <h3>Social Media Graphic Design &amp; Content Creation</h3>
-                            <p>Designed branded graphics for Choyeo Digitals with clear messaging and a consistent look across social media platforms.</p>
+                            <p>Designed branded graphics for Dreamy Digital Co. with clear messaging and a consistent look across social media platforms.</p>
                             <div class="project-tags"><span>Canva</span><span>Graphic Design</span><span>Content Creation</span><span>Branding</span></div>
                         </div>
                         <div class="project-visual">
@@ -898,6 +901,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 03 ============ -->
                     <article class="project">
                         <div class="project-info">
                             <span class="project-number">03</span>
@@ -923,6 +927,7 @@
 
                     <section class="portfolio-sub-section"><h2 id="section-2">Admin &amp; Operations Systems</h2></section>
 
+                    <!-- ============ PROJECT 04 ============ -->
                     <article class="project project-reverse">
                         <div class="project-info">
                             <span class="project-number">04</span>
@@ -946,6 +951,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 05 ============ -->
                     <article class="project">
                         <div class="project-info">
                             <span class="project-number">05</span>
@@ -969,6 +975,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 06 ============ -->
                     <article class="project project-reverse">
                         <div class="project-info">
                             <span class="project-number">06</span>
@@ -992,6 +999,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 07 ============ -->
                     <article class="project">
                         <div class="project-info">
                             <span class="project-number">07</span>
@@ -1017,6 +1025,7 @@
 
                     <section class="portfolio-sub-section"><h2 id="section-3">Data, Reporting &amp; Research</h2></section>
 
+                    <!-- ============ PROJECT 08 ============ -->
                     <article class="project project-reverse">
                         <div class="project-info">
                             <span class="project-number">08</span>
@@ -1040,6 +1049,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 09 ============ -->
                     <article class="project">
                         <div class="project-info">
                             <span class="project-number">09</span>
@@ -1050,7 +1060,7 @@
                         </div>
                         <div class="project-visual image-showcase">
                             <div class="showcase-item">
-                                <span ="showcase-label">SALES TRACKER</span>
+                                <span class="showcase-label">SALES TRACKER</span>
                                 <img src="profile17.jpg" loading="lazy" alt="Sales tracker spreadsheet">
                                 <p class="showcase-caption"><strong>Tracker:</strong> Organized transactions into structured fields with consistent formatting and calculated revenue.</p>
                             </div>
@@ -1062,6 +1072,7 @@
                         </div>
                     </article>
 
+                    <!-- ============ PROJECT 10 ============ -->
                     <article class="project project-reverse">
                         <div class="project-info">
                             <span class="project-number">10</span>
@@ -1264,7 +1275,6 @@
 
                 showView(isPortfolio ? "portfolio" : "home");
 
-                // Close mobile menu
                 var nav = document.getElementById("main-nav");
                 if (nav) nav.classList.remove("open");
                 var btn = document.querySelector(".menu-button");
@@ -1273,7 +1283,6 @@
                     btn.textContent = "☰";
                 }
 
-                // Scroll after display is applied
                 setTimeout(function () {
                     if (hash) {
                         var el = document.getElementById(hash);
@@ -1286,7 +1295,6 @@
                 }, 50);
             }
 
-            // Intercept all same-page anchor clicks
             document.body.addEventListener("click", function (e) {
                 var link = e.target.closest('a[href^="#"]');
                 if (!link) return;
@@ -1296,7 +1304,6 @@
                 navigate(href);
             });
 
-            // Handle direct URL with hash on load
             window.addEventListener("load", function () {
                 navigate(location.hash || "#home");
             });
@@ -1309,7 +1316,7 @@
             img.addEventListener('error', function () {
                 this.classList.add('img-missing');
                 var filename = this.src.split('/').pop();
-                this.alt = '❌ Missing file: images/' + filename;
+                this.alt = '❌ Missing file: ' + filename;
             });
         });
     </script>
