@@ -87,7 +87,7 @@
         background: rgba(248, 247, 244, 0.95);
     }
     .nav-container { min-height: 75px; display: flex; align-items: center; justify-content: space-between; }
-    
+
     /* STYLISH LOGO */
     .logo {
         font-family: 'DM Sans', sans-serif;
@@ -143,7 +143,7 @@
     .availability { font-size: 0.85rem; color: var(--text-light); }
 
     /* Placeholder image styling for other sections */
-    .about-image img, .resume-paper img, .showcase-item img, .showcase-item video {
+    .about-image img, .resume-paper img, .showcase-item img {
         width: 100%;
         min-height: 350px;
         background-color: #EFE8DD;
@@ -158,7 +158,7 @@
         padding: 20px;
         object-fit: cover;
     }
-    
+
     /* UPDATED: Hero Avatar Styling to make a perfect circle */
     .hero-avatar img {
         width: 100%;
@@ -169,9 +169,10 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         padding: 0;
         background-color: transparent;
+        min-height: 0;
     }
 
-    .showcase-item img, .showcase-item video { min-height: 250px; border-radius: 8px; border: 1px solid #eee7df; }
+    .showcase-item img { min-height: 250px; border-radius: 8px; border: 1px solid #eee7df; }
 
     /* =========================================================
        CAPABILITIES
@@ -344,7 +345,7 @@
         .copyright { text-align: center; }
         .project, .project-reverse { grid-template-columns: 1fr; gap: 28px; }
         .project-reverse .project-info, .project-reverse .project-visual { order: 0; }
-        
+
         /* Center avatar on mobile */
         .hero-avatar { margin: 0 auto; max-width: 400px; }
     }
@@ -376,6 +377,35 @@
         .addon-note { flex-direction: column; gap: 6px; text-align: center; }
         .workflow-grid { flex-direction: column; gap: 30px; }
         .workflow-line { display: none; }
+    }
+
+    /* =========================================================
+       PORTFOLIO SHOWCASE IMAGE FIX — ONLY affects .showcase-item img
+       (Homepage hero avatar, about image, resume preview are NOT touched)
+    ========================================================= */
+    .showcase-item img {
+        width: 100%;
+        height: auto;
+        min-height: 0 !important;
+        max-height: 480px;
+        object-fit: contain;
+        display: block;
+        border-radius: 8px;
+        border: 1px solid #eee7df;
+        background: #F7F1E8;
+        padding: 0;
+    }
+
+    /* Red warning box if a portfolio image is missing */
+    .showcase-item img.img-missing {
+        min-height: 160px;
+        padding: 30px 20px;
+        background: #FFE6E6;
+        border: 2px dashed #B5483D;
+        color: #B5483D;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.9rem;
     }
     </style>
 </head>
@@ -444,7 +474,7 @@
                     </div>
 
                     <div class="hero-avatar">
-                        <!-- YOUR CUSTOM IMAGE IS NOW HERE -->
+                        <!-- YOUR CUSTOM IMAGE IS NOW HERE — UNCHANGED -->
                         <img src="profile (2).jpg" alt="Mehwish Profile Picture">
                     </div>
                 </div>
@@ -514,9 +544,9 @@
                     <div class="about-content">
                         <p class="eyebrow">ABOUT ME</p>
                         <h2>Organized, detail-oriented, and always ready to learn.</h2>
-                        
+
                         <p>
-                            I’m a virtual assistant and Computer Science student based in Lahore, Pakistan. On the side, I also run my own small digital product shop, Choyeo Digitals, where I manage everything from product listings and customer inquiries to content scheduling and product creation. I’ve also gained experience in data entry and records verification at a local government office, along with writing and editing for my college publication as an Associate Editor.
+                            I'm a virtual assistant and Computer Science student based in Lahore, Pakistan. On the side, I also run my own small digital product shop, Choyeo Digitals, where I manage everything from product listings and customer inquiries to content scheduling and product creation. I've also gained experience in data entry and records verification at a local government office, along with writing and editing for my college publication as an Associate Editor.
                         </p>
                         <p>
                             I'm most comfortable with the tools creators and small online businesses actually use: Google Workspace, Notion, Asana, Canva, Excel, and Zoho CRM. I learn new tools quickly, communicate clearly in writing, and send regular updates if needed so you always know where things stand.
@@ -746,7 +776,7 @@
                     <div class="contact-content">
                         <p class="eyebrow">CONTACT</p>
                         <h2>Let's work together.</h2>
-                        <p>Tell me what’s taking up your time, and I’ll reply within 24 hours. Prefer to talk first? Book a free 15-minute call with me using Calendly.</p>
+                        <p>Tell me what's taking up your time, and I'll reply within 24 hours. Prefer to talk first? Book a free 15-minute call with me using Calendly.</p>
 
                         <div class="contact-details">
                             <div>
@@ -842,7 +872,7 @@
                         <div class="project-visual">
                             <div class="showcase-item">
                                 <span class="showcase-label">CONTENT PLAN</span>
-                                <video src="videos/social-media-content-plan.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/social-media-content-plan.jpg" loading="lazy" alt="Notion content plan for Choyeo Digitals">
                                 <p class="showcase-caption"><strong>The plan:</strong> A Notion workspace that tracks each post by platform, content type, goal, product, creative direction, and call to action.</p>
                             </div>
                             <div class="showcase-divider"><span>From Plan to Post</span></div>
@@ -894,7 +924,7 @@
                             <div class="showcase-divider"><span>Contact Record &amp; Follow-Up</span></div>
                             <div class="showcase-item">
                                 <span class="showcase-label">CRM RECORD</span>
-                                <video src="videos/zoho-contact-record.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/zoho-contact-record.jpg" loading="lazy" alt="Zoho CRM contact record with follow-ups">
                                 <p class="showcase-caption"><strong>Contact record:</strong> Linked each contact to its products, deals, meetings, tasks, and follow-up email workflows in one place.</p>
                             </div>
                         </div>
@@ -936,13 +966,13 @@
                         <div class="project-visual">
                             <div class="showcase-item">
                                 <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-calendar-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/before-calendar-sample.jpg" loading="lazy" alt="Unorganized calendar with overlapping events">
                                 <p class="showcase-caption"><strong>Before:</strong> Overlapping commitments, inconsistent event organization, and little time left for focused work.</p>
                             </div>
                             <div class="showcase-divider"><span>After Organization</span></div>
                             <div class="showcase-item">
                                 <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-calendar-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/after-calendar-sample.jpg" loading="lazy" alt="Organized color-coded calendar">
                                 <p class="showcase-caption"><strong>After:</strong> Resolved conflicts, color-coded events and tasks by type, and balanced the week to leave room for focused work.</p>
                             </div>
                         </div>
@@ -959,13 +989,13 @@
                         <div class="project-visual">
                             <div class="showcase-item">
                                 <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-file-organization-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/before-file-organization-sample.jpg" loading="lazy" alt="Scattered files with inconsistent names">
                                 <p class="showcase-caption"><strong>Before:</strong> Files scattered across folders with inconsistent names, making documents hard to find.</p>
                             </div>
                             <div class="showcase-divider"><span>After Organization</span></div>
                             <div class="showcase-item">
                                 <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-file-organization-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/after-file-organization-sample.jpg" loading="lazy" alt="Organized folder hierarchy">
                                 <p class="showcase-caption"><strong>After:</strong> Created a folder hierarchy, grouped related files, and applied consistent names so everything is easy to find and share.</p>
                             </div>
                         </div>
@@ -982,13 +1012,13 @@
                         <div class="project-visual">
                             <div class="showcase-item">
                                 <span class="showcase-label">BEFORE</span>
-                                <video src="videos/before-document-proposal-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/before-document-proposal-sample.jpg" loading="lazy" alt="Unformatted business proposal">
                                 <p class="showcase-caption"><strong>Before:</strong> Inconsistent formatting and no clear sections, so key information was hard to find.</p>
                             </div>
                             <div class="showcase-divider"><span>After Formatting</span></div>
                             <div class="showcase-item">
                                 <span class="showcase-label">AFTER</span>
-                                <video src="videos/after-document-proposal-sample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                                <img src="images/after-document-proposal-sample.jpg" loading="lazy" alt="Professionally formatted proposal">
                                 <p class="showcase-caption"><strong>After:</strong> Organized the content into clear sections, applied consistent formatting, and added tables for quick review.</p>
                             </div>
                         </div>
@@ -1096,7 +1126,7 @@
     <!-- =====================================================
          JAVASCRIPT
     ====================================================== -->
-    
+
     <!-- Mobile menu toggle -->
     <script>
         (function () {
@@ -1280,6 +1310,17 @@
                 navigate(location.hash || "#home");
             });
         })();
+    </script>
+
+    <!-- PORTFOLIO-ONLY image error checker (does NOT touch homepage) -->
+    <script>
+        document.querySelectorAll('.showcase-item img').forEach(function (img) {
+            img.addEventListener('error', function () {
+                this.classList.add('img-missing');
+                var filename = this.src.split('/').pop();
+                this.alt = '❌ Missing file: images/' + filename;
+            });
+        });
     </script>
 
 </body>
